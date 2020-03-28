@@ -7,7 +7,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 /**
  *
- * @author Omar IRAQI
+ * @author Youness AYYADA
  */
 @Entity
 @Table(name = "\"user\"")
