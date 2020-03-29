@@ -9,7 +9,7 @@ import ma.aui.sse.capstone.myshoppu.data.entities.Order;
  *
  * @author Youness AYYADA
  */
-public interface OrdersRepository extends BaseRepository<Order>{
+public interface OrderRepository extends BaseRepository<Order>{
     @Query("select o from Order o where o.user.id = ?1")
     List<Order> findByCustomer(long userId);
 }
