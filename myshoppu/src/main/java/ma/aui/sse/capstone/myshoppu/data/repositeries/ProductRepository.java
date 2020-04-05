@@ -31,15 +31,15 @@ public interface ProductRepository extends BaseRepository<Product> {
         @Query("select p from Product p where p.category.id = ?1 and p.price between ?2 and ?3")
         List<Product> findByCategoryAndPrice(long categoryId, float min, float max);
 
-        @Query("select p from Product p where p.brand.id = ?1")
-        List<Product> findByBrand(long brandId);
+        @Query("select p from Product p where p.shop.id = ?1")
+        List<Product> findByShop(long shopID);
 
-        @Query("select p from Product p where p.brand.id = ?1 and p.price between ?2 and ?3")
-        List<Product> findByBrandAndPrice(long brandId, float min, float max);
+        @Query("select p from Product p where p.shop.id = ?1 and p.price between ?2 and ?3")
+        List<Product> findByShopAndPrice(long shopId, float min, float max);
 
-        @Query("select p from Product p where p.category.id = ?1 and p.brand.id = ?2")
-        List<Product> findByCategoryAndBrand(long categoryId, long brandId);
+        @Query("select p from Product p where p.category.id = ?1 and p.shop.id = ?2")
+        List<Product> findByCategoryAndShop(long categoryId, long shopId);
 
-        @Query("select p from Product p where p.category.id =?1 and p.brand.id = ?2 and p.price between ?3 and ?4")
-        List<Product> findByCategoryAndBrandAndPrice(long categoryId, long brandId, float min, float max);
+        @Query("select p from Product p where p.category.id =?1 and p.shop.id = ?2 and p.price between ?3 and ?4")
+        List<Product> findByCategoryAndShopAndPrice(long categoryId, long shopId, float min, float max);
 }

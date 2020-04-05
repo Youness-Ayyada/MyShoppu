@@ -20,7 +20,7 @@ public class Shop extends BaseEntity {
     @NotNull
     private String name;
 
-    @OneToMany(mappedBy = "brand", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "shop", fetch = FetchType.LAZY)
     @OrderBy("name asc")
     private List<Product> products;
 
