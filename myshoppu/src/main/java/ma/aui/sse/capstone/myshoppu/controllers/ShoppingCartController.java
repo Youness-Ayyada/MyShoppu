@@ -33,7 +33,7 @@ public class ShoppingCartController {
     public ShoppingCart getShoppingCart(/* Authentication auth */){
         //Retrieve userId from JWT-based security context
         //auth.getPrinciple()
-        long userId = 1; //To be removed
+        long userId = 0; //To be removed
         System.out.println(shoppingCartService);
         return shoppingCartService.getShoppingCart(userId);
     }
@@ -42,7 +42,7 @@ public class ShoppingCartController {
     public ShoppingCart addProduct(@RequestBody Product dto){
         //Retrieve userId from JWT-based security context
         //auth.getPrinciple()
-        long userId = 1; //To be removed
+        long userId = 0; //To be removed
         ShoppingCart shoppingCart = shoppingCartService.getShoppingCart(userId);
         return shoppingCartService.addProduct(shoppingCart, userId,
                                                 dto.getId(),
@@ -53,7 +53,7 @@ public class ShoppingCartController {
     public ShoppingCart decreaseProductQuantity(@RequestBody Product dto){
         //Retrieve userId from JWT-based security context
         //auth.getPrinciple()
-        long userId = 1; //To be removed
+        long userId = 0; //To be removed
         ShoppingCart shoppingCart = shoppingCartService.getShoppingCart(userId);
         return shoppingCartService.decreaseProductQuantity(shoppingCart, userId, dto.getId(),
                                                     dto.getQuantity());
@@ -63,7 +63,7 @@ public class ShoppingCartController {
     public ShoppingCart removeProduct(@RequestBody Product dto){
         //Retrieve userId from JWT-based security context
         //auth.getPrinciple()
-        long userId = 1; //To be removed
+        long userId = 0; //To be removed
         ShoppingCart shoppingCart = shoppingCartService.getShoppingCart(userId);
         return shoppingCartService.removeProduct(shoppingCart, userId, dto.getId());
     }
